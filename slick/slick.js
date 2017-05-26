@@ -407,7 +407,9 @@
 
         var _ = this,
             slideTo = _.currentSlide + _.options.slidesToScroll;
-
+        
+        if(_.$slides.length == slideTo) slideTo = 0;
+        
         if ( !_.paused && !_.interrupted && !_.focussed ) {
 
             if ( _.options.infinite === false ) {
